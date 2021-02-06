@@ -2,10 +2,16 @@ package com.microservice.jwtservice.model;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+
 public class AuthenticationRequest implements Serializable {
 
 	private static final long serialVersionUID = -6389662755503984706L;
+
+	@NotBlank(message = "Username must not be empty or null")
 	private String username;
+
+	@NotBlank(message = "Password must not be empty or null")
 	private String password;
 
 	public String getUsername() {
